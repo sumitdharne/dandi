@@ -15,7 +15,7 @@ pipeline{
          steps{
            script {
              
-                 sh "docker build --network=host -t ${imageName} ."
+                 sh "sudo docker build --network=host -t ${imageName} ."
                
            }
          }
@@ -25,8 +25,8 @@ pipeline{
          steps{
            script {
              
-                 sh "docker push ${imageName}"
-                 sh "docker rmi --force \$(docker images -q ${imageName} | uniq)"
+                 sh "sudo docker push ${imageName}"
+                 sh "sudo docker rmi --force \$(docker images -q ${imageName} | uniq)"
                 
            }
          }
