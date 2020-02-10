@@ -36,21 +36,6 @@ pipeline{
 
    }
    
-   
-       post {
-
-       success{
-           mail to: 'sumit.dharne@afourtech.com',
-            subject: "[JENKINS]: ${currentBuild.fullDisplayName} Succeed",
-            body: "Project Name : ${currentBuild.fullDisplayName}\n  Status       : Succeed\n  Log          : ${env.BUILD_URL}/consoleText"
-           }
-
-       failure{
-          mail to: 'sumit.dharne@afourtech.com',
-            subject: "[JENKINS]: ${currentBuild.fullDisplayName} Failed",
-            body: "Project Name : ${currentBuild.fullDisplayName}\n  Status       : Failed\n  Log          : ${env.BUILD_URL}/consoleText"
-       }
-   }
 
  
 }
